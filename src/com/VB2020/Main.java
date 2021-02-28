@@ -11,12 +11,14 @@ import java.util.concurrent.CyclicBarrier;
 public class Main {
 
     public static void main(String[] args) {
-        FizzBuzz resource = new FizzBuzz(99);
-        CyclicBarrier barrier = new CyclicBarrier(4);
 
+        FizzBuzz resource = new FizzBuzz(15);
+
+        CyclicBarrier barrier = resource.getBarrier();
+
+        new C (resource, barrier);
         new A (resource, barrier);
         new B (resource, barrier);
-        new C (resource, barrier);
         new D (resource, barrier);
     }
 }

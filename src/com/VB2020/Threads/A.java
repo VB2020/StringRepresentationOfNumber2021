@@ -25,7 +25,6 @@ public class A implements Runnable
                 resource.printFizz();
             }
 
-
             try {
                 barrier.await();
             } catch (InterruptedException | BrokenBarrierException e) {
